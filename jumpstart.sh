@@ -37,3 +37,5 @@ case $argument in
 esac
 
 "$TOOLS/dmg2img" "$TOOLS/FetchMacOS/BaseSystem/BaseSystem.dmg" "$PWD/BaseSystem.img"
+
+echo '`qemu-img create -f qcow2 SystemDisk.qcow2 64G` to Create an empty hard disk using qemu-img ( min 20G )' 
