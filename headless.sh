@@ -18,6 +18,10 @@ MOREARGS=()
     MOREARGS+=(-nographic -vnc :0 -k en-us)
 }
 
+[[ "$HEADLESS" = "2" ]] && {
+    MOREARGS+=(-display none -redir tcp:2222::22 -vnc 0.0.0.0:0)
+}
+
 qemu-system-x86_64 \
     -enable-kvm \
     -m $MEM \
